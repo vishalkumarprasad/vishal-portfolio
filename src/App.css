@@ -1,38 +1,140 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.container.dark {
+  background-color: #1a1a2e;
+  color: #eaeaea;
+}
+
+.container.light {
+  background-color: #eaeaea;
+  color: #1a1a2e;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#page1 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#page1 .intro {
+  font-size: 1.5em;
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+
+#page1 h1 {
+  font-size: 4em;
+  margin-bottom: 0.2em;
+}
+
+#page1 h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+#page1 .tags {
+  font-size: 1.2em;
+  margin-bottom: 2em;
+}
+
+#page1 .icons {
+  display: flex;
+}
+
+#page1 .icons a {
+  margin: 0 0.5em;
+  color: inherit;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+#page1 .icons a:hover {
+  color: #3498db;
+}
+
+#page2, #page3, #page4, #page5 {
+  background: inherit;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+#page2 h2, #page3 h2, #page4 h2, #page5 h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#page2 .projects {
+  max-width: 800px;
+  text-align: center;
+}
+
+#page2 p, #page3 p, #page4 p, #page5 p {
+  font-size: 1.2em;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.theme-toggle:focus {
+  outline: none;
+}
+
+.navigation {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation a {
+  color: inherit;
+  font-size: 1.2em;
+  text-decoration: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: #3498db;
 }
